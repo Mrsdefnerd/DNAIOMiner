@@ -18,6 +18,7 @@ import org.parabot.mrsdefnerd.aiominer.methods.Methods;
 import org.parabot.mrsdefnerd.aiominer.strategies.AntiRandom;
 import org.parabot.mrsdefnerd.aiominer.strategies.Banking;
 import org.parabot.mrsdefnerd.aiominer.strategies.Dropping;
+import org.parabot.mrsdefnerd.aiominer.strategies.Login;
 import org.parabot.mrsdefnerd.aiominer.strategies.Mine;
 import org.parabot.mrsdefnerd.aiominer.strategies.Traveling;
 import org.rev317.api.events.MessageEvent;
@@ -43,7 +44,7 @@ public class DNAIOMiner extends Script implements Paintable, MessageListener {
 		Data.timeRan = System.currentTimeMillis();
 		Data.startExp = Skill.MINING.getExperience();
 		oresMinedThread();
-		Collections.addAll(strategies, new AntiRandom(), new Banking(), new Traveling(), new Dropping(), new Mine());
+		Collections.addAll(strategies, new AntiRandom(), new Login(), new Banking(), new Traveling(), new Dropping(), new Mine());
 		provide(strategies);
 		return true;
 	}

@@ -10,6 +10,7 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JList;
 import javax.swing.JScrollPane;
+import javax.swing.JTextField;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 
@@ -34,7 +35,7 @@ public class UI extends JFrame {
 	@SuppressWarnings({ "unchecked", "rawtypes" })
 	private void init() {
 		setLayout(null);
-		setSize(355, 340);
+		setSize(355, 360);
 		setTitle("DNAIOMiner");
 		setDefaultCloseOperation(HIDE_ON_CLOSE);
 		
@@ -72,9 +73,17 @@ public class UI extends JFrame {
 			
 		});
 		
+		final JTextField username = new JTextField("Username");
+		username.setBounds(10, 235, 150, 20);
+		add(username);
+		
+		final JTextField password = new JTextField("Password");
+		password.setBounds(180, 235, 150, 20);
+		add(password);
+		
 		JButton start = new JButton("Start");
 		start.setFont(new Font("Verdana", Font.BOLD, 15));
-		start.setBounds(10, 250, 320, 40);
+		start.setBounds(10, 270, 320, 40);
 		add(start);
 		
 		start.addActionListener(new ActionListener() {
@@ -87,6 +96,8 @@ public class UI extends JFrame {
 				}
 				Data.rocks = Rocks.values()[rockList.getSelectedIndex()];
 				Data.type = Rocks.values()[rockList.getSelectedIndex()].getTypes()[mineList.getSelectedIndex()];
+				Data.username = username.getText();
+				Data.password = password.getText();
 				setVisible(false);
 				isRunning = false;
 			}
