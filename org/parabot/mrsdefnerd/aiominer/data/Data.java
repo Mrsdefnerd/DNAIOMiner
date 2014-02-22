@@ -12,10 +12,10 @@ public class Data {
 	public static String botState = "Starting up..";
 	
 	public static long timeRan;
-	public static int startExp;
-	public static int gainedExp = 0;
+	public static int startExp, gainedExp;
 	
-	public static boolean shouldEscape = false;
-	public static boolean shouldRemove = false;
+	public static boolean shouldEscape = false, shouldRemove = false;
+	
+	public static String username, password;
 
 }
